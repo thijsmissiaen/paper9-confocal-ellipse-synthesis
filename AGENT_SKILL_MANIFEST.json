@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "name": "confocal-ellipse-bridge-synthesis",
+  "title": "The Phase-Independent Confocal Ellipse Identity |T_n(d,t)|^2 - |T_n(0,t)|^2 = 4n^{-1}sinh^2(d omega_n), the Three-Part u-Domain Bridge Identity, and Explicit Rosser-Schoenfeld Stieltjes Bounds",
+  "version": "1.0.0",
+  "author": {
+    "name": "Thijs Missiaen",
+    "affiliation": "Independent Researcher, Belgium",
+    "email": "thijs.missiaen@gmail.com",
+    "orcid": "0009-0007-3678-0810"
+  },
+  "repository": "https://github.com/thijsmissiaen/paper9-confocal-ellipse-synthesis",
+  "license": "MIT",
+  "msc_2020": ["11M06", "11N05", "30D15", "41A60"],
+  "entrypoints": {
+    "skill": ".agents/skills/confocal-ellipse-bridge-synthesis/SKILL.md",
+    "manuscript_tex": "paper/paper9_confocal_ellipse_synthesis.tex",
+    "manuscript_pdf": "paper/paper9_confocal_ellipse_synthesis.pdf",
+    "verification_script": "scripts/verify_paper9_confocal_ellipse_synthesis.py",
+    "figures": [
+      "figures/fig1_bridge_complementarity_and_stieltjes_bounds.png",
+      "figures/fig2_confocal_ellipse_and_three_domain_synthesis.png"
+    ]
+  },
+  "core_theorems": [
+    "Theorem 1.1: Phase-Independent Confocal Ellipse Identity, Three-Part u-Domain Bridge Identity, Explicit Stieltjes Bounds, and Three-Domain Synthesis",
+    "Theorem 2.1: Exact Three-Part u-Domain Bridge Identity and Bridge-Reconstruction Duality for Xi(t-id)E_X(s)",
+    "Theorem 2.2: Complementarity Theorem, Quadratic Wronskian Boundary Damping Delta C_n = 2 sinh^2((1/2)d omega_n) -> 0, and Cubic Bridge Suppression R_int <= theta^3",
+    "Theorem 3.1: Exact Algebraic sinh^2 Ratio Identity <= n^{-d} and Closed-Form Rosser-Schoenfeld / Dusart Stieltjes Upper Bounds on [10^8, inf)",
+    "Theorem 3.1 & Table 2: Seamless Conservative Handshake at T_1 = 10^8 and Asymptotic Scaling up to t = 10^100",
+    "Theorem 4.1: Phase-Independent Symplectic Confocal Ellipse Identity |T_n(d,t)|^2 - |T_n(0,t)|^2 = 4n^{-1}sinh^2(d omega_n) and Uniform L^1 Closure for d > 1/4",
+    "Theorem 4.2: Complementary Real and Imaginary Square Decomposition, Universal Increment Anchor |Delta T_1| >= 4 sinh^2((1/2)d omega_1), and Oscillatory Prime-Phase Scaling",
+    "Theorem 5.1: Three-Domain Master Architecture [0, 55] U [55, 10^8] U [10^8, inf), Five-Wall Overlap Certification, and Category A/B/C Epistemic Classification"
+  ],
+  "verification_command": "python scripts/verify_paper9_confocal_ellipse_synthesis.py"
+}
