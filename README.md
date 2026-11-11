@@ -1,6 +1,7 @@
 # Shifted Mellin Bridge Decomposition, Diagonal Stieltjes Tail Bounds, and Off-Diagonal Obstructions for Euler-Sieved Approximations to Riemann's Xi-Function
 
 **Author:** Thijs Missiaen (Independent Researcher, Belgium · ORCID: [0009-0007-3678-0810](https://orcid.org/0009-0007-3678-0810))  
+**DOI (Zenodo / CERN):** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23645891.svg)](https://doi.org/10.5281/zenodo.23645891) [`10.5281/zenodo.23645891`](https://doi.org/10.5281/zenodo.23645891) (`v9.1.0`: [`10.5281/zenodo.24141070`](https://doi.org/10.5281/zenodo.24141070))  
 **Manuscript:** [`paper/paper9_confocal_ellipse_synthesis.pdf`](paper/paper9_confocal_ellipse_synthesis.pdf) (AMS-LaTeX, 11 pages) · [`paper/paper9_confocal_ellipse_synthesis.tex`](paper/paper9_confocal_ellipse_synthesis.tex)  
 **Verification Suite:** [`scripts/verify_paper9_confocal_ellipse_synthesis.py`](scripts/verify_paper9_confocal_ellipse_synthesis.py) (50-digit `mpmath`)  
 **MSC 2020:** Primary `11M06`, `11M26`; Secondary `30D15`, `41A60`

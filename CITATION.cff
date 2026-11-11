@@ -8,6 +8,7 @@ authors:
     orcid: "https://orcid.org/0009-0007-3678-0810"
 title: "Shifted Mellin Bridge Decomposition, Diagonal Stieltjes Tail Bounds, and Off-Diagonal Obstructions for Euler-Sieved Approximations to Riemann's Xi-Function"
 version: "9.1.0"
+doi: "10.5281/zenodo.23645891"
 date-released: "2026-11-11"
 url: "https://github.com/thijsmissiaen/paper9-confocal-ellipse-synthesis"
 repository-code: "https://github.com/thijsmissiaen/paper9-confocal-ellipse-synthesis"

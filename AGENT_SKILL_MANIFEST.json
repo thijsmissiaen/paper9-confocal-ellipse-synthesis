@@ -2,7 +2,8 @@
   "schema_version": "1.0.0",
   "name": "confocal-ellipse-bridge-synthesis",
   "title": "Shifted Mellin Bridge Decomposition, Diagonal Stieltjes Tail Bounds, and Off-Diagonal Obstructions for Euler-Sieved Approximations to Riemann's Xi-Function",
-  "version": "2.0.0",
+  "version": "9.1.0",
+  "doi": "10.5281/zenodo.23645891",
   "author": {
     "name": "Thijs Missiaen",
     "affiliation": "Independent Researcher, Belgium",
