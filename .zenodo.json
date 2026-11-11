@@ -1,6 +1,6 @@
 {
-  "title": "The Phase-Independent Confocal Ellipse Identity |T_n(d,t)|^2 - |T_n(0,t)|^2 = 4n^{-1}sinh^2(d omega_n), the Three-Part u-Domain Bridge Identity, and Explicit Rosser-Schoenfeld Stieltjes Bounds",
-  "description": "Paper IX of the series on the Transverse Wronskian of Riemann's Xi-Function. Establishes the exact three-part u-domain bridge identity for Xi(t-id)E_X(s) and quadratic Wronskian boundary damping Delta C_n(d,t) = 2 sinh^2((1/2)d omega_n(t)) -> 0 at the saddle-point horizon n -> N_*(t), derives explicit closed-form Rosser-Schoenfeld and Dusart Stieltjes upper bounds across the infinite domain [10^8, inf) alongside the exact algebraic sinh^2 ratio identity <= n^{-d}, proves the phase-independent symplectic confocal ellipse identity |T_n(d,t)|^2 - |T_n(0,t)|^2 = 4n^{-1}sinh^2(d omega_n(t)) with uniform phase-blind L^1 closure for all d > 1/4, and synthesizes the three-domain architecture [0, 55] U [55, 10^8] U [10^8, inf) with a rigorous 12-row Category A/B/C epistemic audit.",
+  "title": "Shifted Mellin Bridge Decomposition, Diagonal Stieltjes Tail Bounds, and Off-Diagonal Obstructions for Euler-Sieved Approximations to Riemann's Xi-Function",
+  "description": "Applies Riemann's classical symmetry-point integral split to the Euler-sieved Jacobi-theta kernel of Xi(t - i*d)*E_X(s), obtaining an exact three-part decomposition into incomplete-Gamma shells, an unsieved reflected branch E_X(s)*F_+(1 - s), and a compact Gaussian-damped bridge integral. Derives unconditional Rosser-Schoenfeld Stieltjes upper bounds for the forward L^2 diagonal prime tail on X >= sqrt(N(t)) together with Mertens' harmonic benchmark, and proves four structural obstructions (reflected-branch asymmetry, divergence of the true n^{-1/2}-weighted L^1 sum for 0 < d < 1/2, destructive off-diagonal cross-terms, and Voronin universality) showing why single-mode confocal-ellipse identities cannot establish off-critical zero-freeness.",
   "upload_type": "publication",
   "publication_type": "preprint",
   "creators": [
@@ -10,27 +10,25 @@
       "orcid": "0009-0007-3678-0810"
     }
   ],
-  "access_right": "open",
-  "license": "MIT",
   "related_identifiers": [
     {
-      "scheme": "url",
       "identifier": "https://github.com/thijsmissiaen/paper9-confocal-ellipse-synthesis",
-      "relation": "isSupplementTo"
+      "relation": "isSupplementTo",
+      "scheme": "url"
     }
   ],
+  "access_right": "open",
+  "license": "MIT",
   "keywords": [
     "Riemann Xi-function",
-    "Transverse Wronskian",
-    "Confocal ellipse identity",
-    "Three-part bridge identity",
-    "Quadratic Wronskian boundary damping",
-    "Rosser-Schoenfeld Stieltjes bounds",
-    "Montgomery-Vaughan Hilbert inequality",
-    "Three-domain half-plane architecture",
+    "Mellin bridge decomposition",
+    "Finite Euler product sieve",
+    "Incomplete Gamma shells",
+    "Mertens theorem",
+    "Stieltjes prime-tail bounds",
+    "Voronin universality",
     "MSC 11M06",
-    "MSC 11N05",
-    "MSC 30D15"
+    "MSC 11M26"
   ],
-  "version": "1.0.0"
+  "version": "2.0.0"
 }

@@ -1,80 +1,42 @@
 ---
 name: confocal-ellipse-bridge-synthesis
-description: >-
-  Scientific knowledge skill for Paper IX of the Transverse Wronskian Series on Riemann's Xi-Function.
-  Provides the exact three-part u-domain bridge identity for Xi(t-id)E_X(s), quadratic Wronskian
-  boundary damping Delta C_n = 2 sinh^2((1/2)d omega_n) -> 0 at the saddle-point horizon n -> N_*(t),
-  explicit unconditional Rosser-Schoenfeld and Dusart Stieltjes upper bounds across [10^8, inf),
-  the exact algebraic sinh^2 ratio identity <= n^{-d}, the phase-independent symplectic confocal
-  ellipse identity |T_n(d,t)|^2 - |T_n(0,t)|^2 = 4n^{-1}sinh^2(d omega_n) with uniform phase-blind
-  L^1 closure for d > 1/4, and the three-domain half-plane architecture [0, 55] U [55, 10^8] U [10^8, inf)
-  with Category A/B/C epistemic classification.
+description: Mathematical reference and red-team audit guardrails for Paper IX on Riemann's shifted Mellin bridge decomposition for Xi * E_X, L^2 Stieltjes prime-tail bounds, Mertens' harmonic benchmark, and the four structural obstructions (branch asymmetry, L^1 divergence, off-diagonal cancellation, and Voronin universality) preventing phase-blind closure on d > 1/4.
 ---
 
-# Confocal Ellipse Identity, Three-Part $u$-Domain Bridge, and Explicit Stieltjes Bounds Skill
+# Paper IX Skill: Shifted Mellin Bridge, Diagonal Stieltjes Bounds, and Off-Diagonal Obstructions
 
-This skill provides autonomous mathematical and coding agents with the analytical identities, closed-form Stieltjes inequalities, and directed-rounding interval verification protocols established in **Paper IX** of the Transverse Wronskian Series by Thijs Missiaen (Independent Researcher, Belgium; ORCID: `0009-0007-3678-0810`).
+**Author:** Thijs Missiaen (ORCID: `0009-0007-3678-0810`)
 
-## 1. Core Mathematical Identities and Theorems
+## When to Activate
 
-### 1.1 The Exact Three-Part $u$-Domain Bridge Identity (Theorem 2.1)
+Activate this skill whenever inspecting, extending, or citing Paper IX (`paper9-confocal-ellipse-bridge-synthesis`), finite Euler-sieve products $\Xi(t - \mathrm{i}d)E_X(s)$, incomplete-Gamma shells $\mathcal{J}_n(s)$, Stieltjes prime-tail bounds, or confocal-ellipse mode decompositions.
 
-For $s = \frac{1}{2} + d + \mathrm{i} t$ ($z = t - \mathrm{i} d$) and sieve cutoff $X \ge 1$, let $E _ X(s) = \exp(-\sum _ {m=2}^{\lfloor X\rfloor} \frac{\Lambda(m)}{\ln m}m^{-s}) = \sum _ {k=1}^{\infty} c _ k^{\mathcal{E}}(X)k^{-s}$ and $\zeta(s)E _ X(s) = \sum _ {n=1}^{\infty} b _ n^{\mathcal{E}}(X)n^{-s}$. Splitting the bilateral Laplace–Mellin integral of $\Phi _ {\mathcal{E} _ X}(u)$ at $u = 0$ and applying modular Jacobi reflection $\Phi(-w) = \Phi(w)$ at the shifted symmetry point $w = u + \frac{1}{2}\ln k = 0$ yields the exact identity
+## Canonical Normalization and Proven Identities
 
-$$\frac{1}{2}\Xi(t - \mathrm{i} d) E _ X(s) \equiv \mathcal{I} _ +^{\mathcal{E} _ X}(s) + E _ X(s) F _ +(1 - s) + \mathcal{B} _ {\mathrm{bridge}}^{\mathcal{E} _ X}(s),$$
+1. **Canonical Transverse Wronskian:**
 
-where the forward branches satisfy the bridge-reconstruction duality $\mathcal{I} _ +^{\mathcal{E} _ X}(s) + \mathcal{B} _ {\mathrm{bridge}}^{\mathcal{E} _ X}(s) \equiv E _ X(s) F _ +(s)$. Each right half-line shell integral admits the closed incomplete-Gamma representation
+$$\Xi(t - \mathrm{i}d) = 8\int _ 0^{\infty} \Phi(u)\cos\bigl(2(t - \mathrm{i}d)u\bigr)\,\mathrm{d}u, \qquad W(d, t) = \frac{1}{2}\frac{\partial}{\partial d}\lvert \Xi(t - \mathrm{i}d)\rvert^2 = 16\int _ 0^{\infty} y\sinh(2dy)\,I(y, t)\,\mathrm{d}y,$$
 
-$$\mathcal{J} _ n(s) := 2\int _ 0^{\infty} \frac{1}{\sqrt{n}}\varphi _ 1\left(u + \frac{1}{2}\ln n\right)\mathrm{e}^{2(s-1/2)u} \mathrm{d}u = \frac{1}{2}\pi^{-s/2}n^{-s}\left[(s-1)\Gamma\left(\frac{s}{2}+1, \pi n^2\right) + 2\left(\pi n^2\right)^{s/2+1}\mathrm{e}^{-\pi n^2}\right] = \mathcal{O}\left(\pi n^2 \mathrm{e}^{-\pi n^2}\right).$$
+where $I(y, t) = \int _ {-\infty}^{\infty} \Phi(\frac{y+x}{2})\Phi(\frac{y-x}{2})\cos(2tx)\,\mathrm{d}x$.
 
-For $X \ge 6$, all shells $2 \le n \le 6$ vanish ($b _ n^{\mathcal{E}}(X) = 0$) and $\mathrm{e}^{-49\pi} \approx 1.39 \times 10^{-67}$, so $\mathcal{I} _ +^{\mathcal{E} _ X}(s)$ coincides with the single $n = 1$ mother wavelet $\mathcal{J} _ 1(s)$ to 63 decimal places.
+2. **Riemann-Type Shifted Mellin Decomposition (Theorem 2.1):** Adapting Riemann's (1859) classical split at $u = 0$ to $\Phi _ {\mathcal{E}}(u) = \sum _ {k \mid P _ X} \mu(k)k^{-1/2}\Phi(u + \frac{1}{2}\ln k)$ gives
 
-### 1.2 The Complementarity Theorem and Quadratic Wronskian Boundary Damping (Theorem 2.2)
+$$\frac{1}{2}\Xi(t - \mathrm{i}d)\,E _ X(s) = \mathcal{I} _ +^{\mathcal{E}}(s) + E _ X(s)\,F _ +(1 - s) + \mathcal{B} _ {\mathrm{bridge}}^{\mathcal{E}}(s),$$
 
-For each active Riemann–Siegel mode $1 \le n \le N(t) = \lfloor N _ \star(t)\rfloor$ with $N _ \star(t) := \sqrt{t/2\pi}$ and $\omega _ n(t) := \ln(N _ \star(t)/n) \ge 0$, the pure Wronskian excess above the critical line $d = 0$ is
+with closed incomplete-Gamma shells $\mathcal{J} _ n(s) = \frac{1}{2}\pi^{-s/2}n^{-s}[(s - 1)\Gamma(\frac{s}{2}+1,\pi n^2) + 2(\pi n^2)^{s/2+1}\mathrm{e}^{-\pi n^2}]$.
 
-$$\Delta\mathcal{C} _ n(d,t) := \cosh\left(d\omega _ n(t)\right) - 1 \equiv 2\sinh^2\left(\frac{1}{2}d\omega _ n(t)\right) \ge 0.$$
+3. **Hyperbolic Mode Ratios, $L^2$ Stieltjes Bounds, and Mertens' Benchmark (Theorem 3.1):** With $N _ {\star}(t) = \sqrt{t/(2\pi)}$ and $\omega _ n(t) = \ln(N _ {\star}(t)/n)$, one has $\sinh^2(\frac{1}{2}d\omega _ n)/\sinh^2(\frac{1}{2}d\omega _ 1) \le n^{-d}$ and $\sinh^2(d\omega _ n)/\sinh^2(d\omega _ 1) \le n^{-2d}$. On $X \ge \max(2, \sqrt{N(t)})$, every integer $n \in (\lfloor X\rfloor, N(t)]$ with $b _ n^{\mathcal{E}}(X) \neq 0$ is strictly a prime $p \in (X, N(t)]$, and Stieltjes integration by parts against $\vartheta(u) \le c _ {\vartheta}u$ (Rosser–Schoenfeld 1962) gives $\mathcal{E} _ {\mathrm{diag}}^{\mathcal{E},L^2}(d,t; X) = \sum _ {X < p \le N(t)} p^{-1-2d} \le c _ {\vartheta}[X^{-2d}/\ln X + \int _ X^{N(t)} u^{-1-2d}/\ln u\,\mathrm{d}u]$, while Mertens' theorem (1874) explains the harmonic threshold $\theta _ {\mathrm{Mertens}} = \frac{1}{2}\mathrm{e}^{-1} \approx 0.18394$.
 
-Whereas $\Delta\mathcal{C} _ 1(d,t)$ is exponentially maximal at $n = 1$, $\Delta\mathcal{C} _ n(d,t) \sim \frac{1}{2}d^2(\ln(N _ \star(t)/n))^2 \to 0$ vanishes quadratically at the stationary-phase horizon $u = 0 \iff n = N _ \star(t)$. Consequently:
-- **Zone I ($2 \le n \le \lfloor X\rfloor$):** Large hyperbolic weights $\Delta\mathcal{C} _ n$ are annihilated identically by $b _ n^{\mathcal{E}}(X) \equiv 0$.
-- **Zone II ($\lfloor X\rfloor < n \le N(t){}$):** Surviving prime powers are quadratically damped near $n \to N(t)$, contributing two additional powers of $(\ln N(t))^{-1}$ beyond prime dilution to yield $(\ln N(t))^{-3}$ boundary suppression and $X _ {\mathrm{W\text{-}pure}}^{\mathcal{E}}(d, 10^8) \in [9, 53] < \sqrt{N(10^8)} = 63$ ($\theta _ {\mathrm{W\text{-}pure}}^{\mathcal{E}}(d, 10^8) \in [0.1263, 0.2389] < \frac{1}{4}$).
-- **Bridge Damping ($u \in [-\frac{1}{2}\ln k, 0]$, $k \le X = N _ \star(t)^{2\theta}$):** The pointwise lever satisfies $\mathcal{R} _ {\mathrm{full}}(d,t;\theta) = \sinh^2(d\theta\omega _ 1)/\sinh^2(d\omega _ 1) \le \theta^2$ and the integrated Wigner–Sinh lever satisfies $\mathcal{R} _ {\mathrm{int}}(d,t;\theta) \le \theta^3$.
+4. **Elementary Single-Mode Identity (Proposition 4.1):** The relation $\cosh^2(a)\cos^2\phi + \sinh^2(a)\sin^2\phi = \cos^2\phi + \sinh^2(a)$ is an elementary trigonometric-hyperbolic identity for a single mode.
 
-### 1.3 Explicit Rosser–Schoenfeld Stieltjes Bounds and the Exact $\sinh^2$ Ratio Identity (Theorem 3.1 and Table 2)
+## Mandatory Guardrails Against Falsified Overclaims
 
-For all $1 \le n \le N _ \star(t)$ and $d > 0$, the pure Wronskian weight ratio obeys the exact algebraic identity
+- **Never switch $n^{-1/2} \mapsto n^{-(1-d)}$:** With the true Riemann–Siegel factor $n^{-1/2}$, the $L^1$ prime sum weighted by $\sinh^2(\frac{1}{2}d\omega_n)/\sinh^2(\frac{1}{2}d\omega_1) \asymp n^{-(1/2+d)}$ diverges as $\frac{N(t)^{1/2-d}}{(1/2-d)\ln N(t)} \to +\infty$ for every $0 < d < \frac{1}{2}$ (Proposition 3.2).
+- **Never claim phase-blind zero-free closure on $d > \frac{1}{4}$:** Mixing linear $n^{-1/2}$ with quadratic $\sinh^2(d\omega_n)$ violates homogeneity; positive $L^2$ diagonals do not prevent destructive off-diagonal cancellation $\mathcal{C} _ {\mathrm{off}}(d, t) < 0$; and Voronin's universality theorem (1975) together with Bohr density proves $\inf _ {t > 0}\lvert \zeta(\sigma + \mathrm{i}t)E_X(\sigma + \mathrm{i}t)\rvert = 0$ on $\frac{3}{4} < \sigma < 1$ (Proposition 4.3).
+- **Never treat symmetric mode sums as approximate functional equations for $\Xi E_X$:** Because $E_X(s) \neq E_X(1 - s)$, the reflected branch in Theorem 2.1 is $E_X(s)F _ +(1 - s)$, not $F _ +^{\mathcal{E}}(1 - s)$ (Proposition 2.3).
+- **Never claim continuum grid verification to astronomical heights:** Evaluating $N(t) \asymp \sqrt{t}$ modes scales exponentially in $\ln t$; unconditional zero verification currently reaches $t \le 3 \times 10^{12}$ (Platt–Trudgian 2021).
 
-$$\frac{\sinh^2\left(\frac{1}{2}d\omega _ n(t)\right)}{\sinh^2\left(\frac{1}{2}d\omega _ 1(t)\right)} \equiv n^{-d}\left(\frac{1 - (n/N _ \star(t))^d}{1 - N _ \star(t)^{-d}}\right)^2 \le n^{-d}.$$
-
-Using the unconditional Chebyshev inequalities of Rosser and Schoenfeld (1962) and Dusart (2010, 2018) ($\vartheta(x) \le c _ \vartheta x$ with $c _ \vartheta = 1.000028$, $\psi(x) \le c _ \psi x$ with $c _ \psi = 1.03883$), Stieltjes integration on the quadratic purity window $n \in (e^{\theta L}, N(t)]$ ($\theta \in [\frac{1}{4}, \frac{1}{2})$, $L := \ln(t/2\pi){}$) yields for all $t \in [10^8, \infty)$ without prime summation:
-
-$$\mathcal{E} _ {\mathrm{diag}}^{\mathcal{E},\mathrm{fwd}}\left(d,t;\mathrm{e}^{\theta L}\right) \le \overline{\mathcal{E}} _ {\mathrm{RS}}^{\mathrm{fwd}}(d,t;\theta) := \frac{c _ {\mathrm{RS}}(\theta L)}{\theta L}\cdot\frac{\mathrm{e}^{-2\theta d L} - \mathrm{e}^{-dL}}{2d} < \frac{c _ {\mathrm{RS}}(\theta L)}{2d\theta L}\left(\frac{t}{2\pi}\right)^{-2\theta d} \longrightarrow 0,$$
-
-and proves that the scale-invariant pure Wronskian exponent satisfies
-
-$$\lim _ {t\to\infty} \overline{\theta} _ {\mathrm{W\text{-}pure}}^{\mathcal{E}}(d,t) \le \frac{1}{2}\exp\left(-\frac{1}{c _ \vartheta}\right) = 0.1839448708257938635\dots < \frac{1}{4} < \frac{1}{2},$$
-
-with a conservative $C^0$ handshake at $T _ 1 = 10^8$ ($\mathrm{Ratio\ Exact/Analytical} \in [0.9402, 0.9874] < 1$).
-
-### 1.4 The Phase-Independent Confocal Ellipse Identity and Uniform $L^1$ Closure for $d > \frac{1}{4}$ (Theorems 4.1 and 4.2)
-
-For each combined forward and reflected Riemann–Siegel mode $T _ n(d,t) = 2n^{-1/2}(\cosh(d\omega _ n)\cos\phi _ n + \mathrm{i}\sinh(d\omega _ n)\sin\phi _ n)$ with phase $\phi _ n(t) = \vartheta _ {\mathrm{RS}}(t) - t\ln n \in \mathbb{R}$, $T _ n(d,t)$ traces a confocal ellipse with $d$-invariant foci $c _ n \equiv \pm 2n^{-1/2}$, symplectic area $2\pi n^{-1}\sinh(2d\omega _ n) > 0$, and phase-independent modulus-squared increment
-
-$$\left\lvert T _ n(d,t)\right\rvert^2 - \left\lvert T _ n(0,t)\right\rvert^2 \equiv 4 n^{-1} \sinh^2\left(d\omega _ n(t)\right) > 0 \qquad (\forall \phi _ n(t) \in \mathbb{R}).$$
-
-The normalized ellipse-diagonal and Wronskian-diagonal ratios satisfy
-
-$$w _ n^{\mathrm{ell}}(d,t) \equiv n^{-(1+2d)}\left(\frac{1 - (n/N _ \star(t))^{2d}}{1 - N _ \star(t)^{-2d}}\right)^2 \le n^{-(1+2d)}, \qquad w _ n^{\mathrm{W\text{-}diag}}(d,t) \equiv n^{-(\frac{1}{2}+2d)}\left(\frac{1 - (n/N _ \star(t))^{2d}}{1 - N _ \star(t)^{-2d}}\right)^2 \le n^{-(\frac{1}{2}+2d)}.$$
-
-Whenever $d > \frac{1}{4}$ ($\sigma > \frac{3}{4}$), the exponent $\frac{1}{2} + 2d > 1$ makes even the completely phase-blind $L^1$ sum of $w _ n^{\mathrm{W\text{-}diag}}(d,t)$ converge uniformly as $t \to \infty$ with finite sieve cutoff $X _ \infty(d) \le 13$ and $\lim _ {t\to\infty}\overline{\theta} _ {\mathrm{W\text{-}diag}}^{\mathcal{E}}(d,t) = 0$. Furthermore, the $n = 1$ complex transverse increment anchor satisfies $\lvert\Delta T _ 1(d,t)\rvert \ge 4\sinh^2(\frac{1}{2}d\omega _ 1(t)) > 0$ for all $\vartheta _ {\mathrm{RS}}(t) \in \mathbb{R}$.
-
-### 1.5 Three-Domain Master Architecture and Epistemic Classification (Theorem 5.1)
-
-The upper half-plane $(d,t) \in [0,\infty) \times [0,\infty)$ is partitioned into Domain I ($[0, 55]$, certified via `mpmath.iv` Argument Principle $N _ {\mathrm{zeros}}(\Omega _ k) \equiv 0$ and $4.98\times 10^6$ GPU Lipschitz cells), Domain II ($[55, 10^8]$, certified via $2.5\times 10^6$ GPU cells and exact 550-prime sums), and Domain III ($[10^8, \infty)$, governed by closed-form Rosser–Schoenfeld Stieltjes bounds), isolating the single remaining asymptotic question on $0 < d \le \frac{1}{4}$ as $t \to \infty$ (pointwise unaveraged phase cancellation in Lemma L-1 $\iff$ exclusion of interior Chladni branch points $\Xi'(z _ c) = 0$ in Lemma L-2).
-
-## 2. Reproducible Verification Command
-
-Run the standalone verification script from the repository root:
+## Verification Command
 
 ```bash
 python scripts/verify_paper9_confocal_ellipse_synthesis.py
